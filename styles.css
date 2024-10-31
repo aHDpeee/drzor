@@ -1,0 +1,88 @@
+/* Основные стили для сайта */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: #e0e0e0;
+    margin: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh; /* Полная высота экрана */
+    scroll-snap-align: start; /* Выравнивание при прокрутке */
+}
+
+/* Добавляем стили для контейнера, чтобы управлять прокруткой */
+
+/* Секретный проект */
+#intro {
+text-align: center;
+}
+
+#title {
+font-size: 36px;
+color: #e3d4a1;
+}
+
+/* Галерея */
+.gallery {
+    width: auto;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+}
+
+.image-container {
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+/* Стили для центрального изображения с классом .active */
+.gallery-image.active {
+    transform: scale(1); /* Полный размер */
+    filter: saturate(2) blur(0);
+    transition: transform 2s, filter 2s ease;
+}
+
+/* Стили для остальных изображений */
+.gallery-image:not(.active) {
+    transform: scale(0.01); /* Уменьшение масштаба неактивных картинок */
+    filter: grayscale(100%) blur(10px); /* Потеря цвета и резкости */
+    transition: transform 2s, filter 2s ease;
+}
+
+.gallery-image {
+width: 80vw;
+height: auto; /* Ограничьте высоту для предотвращения растяжения */
+object-fit: contain; /* Сохраняет пропорции */
+border-radius: 10vw;
+cursor: pointer;
+scroll-snap-align: center;
+transition: transform 0.2s, filter 0.5s ease;
+}
+
+/* Видео */
+.custom-player {
+width: 80%;
+max-width: 600px;
+margin: 20px auto;
+border: 2px solid #666;
+border-radius: 10px;
+}
+
+/* Таймер */
+#timer {
+text-align: center;
+font-size: 5rem;
+color: #821400;
+}
+
+#final-link {
+color: #e3d4a1;
+text-decoration: none;
+}
